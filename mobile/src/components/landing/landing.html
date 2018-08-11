@@ -1,0 +1,18 @@
+<ion-content *ngIf="!activated" padding>
+  <h3>Photo Game SignUp</h3>
+
+  <form (ngSubmit)="login()">
+    <ion-item>
+      <ion-label>User Name</ion-label>
+      <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+
+    <ion-label *ngIf="hasError" style="text-align: center;color: red">{{ formError }}</ion-label>
+    <button ion-button type="submit" block>Sign Up</button>
+  </form>
+</ion-content>

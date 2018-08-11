@@ -1,8 +1,9 @@
-from django.urls import path
-
+from django.conf.urls import url
+from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
 urlpatterns = [
-    path('', views.UserList.as_view()),
-    path('<int:pk>/', views.UserDetail.as_view()),
+    url(r'^photogame/$', views.game_request),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

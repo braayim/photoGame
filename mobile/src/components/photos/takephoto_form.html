@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Take Photo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-thumbnail>
+    <img src="data:image/jpg;base64,{{dummyPhoto}}">
+  </ion-thumbnail>
+  <button ion-button (click)="takePhoto()" block>Take Photo</button>
+  <ion-item>
+    <ion-label floating>Title</ion-label>
+    <ion-input type="text" [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" [(ngModel)]="description"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Gaming</ion-label>
+    <ion-select [(ngModel)]="category">
+      <ion-option value="people">People</ion-option>
+      <ion-option value="nature">Nature</ion-option>
+      <ion-option value="city">City</ion-option>
+      <ion-option value="life">Life</ion-option>
+      <ion-option value="love">Love</ion-option>
+      <ion-option value="sports">Sports</ion-option>
+      <ion-option value="family">Family</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-input type="text" [(ngModel)]="location"></ion-input>
+  </ion-item>
+</ion-list>
+</ion-content>
