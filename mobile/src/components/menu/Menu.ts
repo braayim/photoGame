@@ -74,6 +74,10 @@ export class Menu{
       this.navCtrl.push(CapturePhotoContent, {});
   }
 
+  /***
+   * This refreshes the menu by subscribing to remoteContent observable
+   * @param refresher
+   */
   doRefresh(refresher){
     this.menuService.remoteContent.subscribe((data)=>{
       refresher.complete();
