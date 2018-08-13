@@ -21,8 +21,8 @@ export class Menu{
    */
   constructor(private menuService:PixMenuService,
               public navCtrl: NavController){
+    this.img_placeholder =imagePlacehoder;
     this.menuService.myObservable.subscribe((data)=>{
-      this.img_placeholder =imagePlacehoder;
       this.menuProcessing(data);
     });
 
@@ -72,6 +72,13 @@ export class Menu{
   takeNewPhoto() {
     logDev("Going to take new photo");
       this.navCtrl.push(CapturePhotoContent, {});
+  }
+
+  doRefresh(refresher){
+    this.menuService.remoteContent.subscribe((data)=>{
+      refresher.complete();
+      this.menuProcessing(data);
+    });
   }
 
 }

@@ -24,11 +24,19 @@ export class PixMenuService{
    * the remote server and the database
    */
   get myObservable(){
-    let self = this;
     return new Observable((observer) => {
       this.getItemsFromDb(observer);
       this.updateItemsFromServer(observer);
 
+    });
+  }
+
+  /***
+   * This only picks data from server and updates the menu
+   */
+  get remoteContent(){
+    return new Observable((observer) => {
+      this.updateItemsFromServer(observer);
     });
   }
 
