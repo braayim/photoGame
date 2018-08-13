@@ -1,90 +1,116 @@
 import {Injectable} from "@angular/core";
 import {DbService} from "./DbService";
 import {PostService} from "./PostService";
-import {BehaviorSubject, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import "rxjs/add/operator/map";
-import {logDev} from "../helpers/utilHelper";
+import {logDev, newRequestWrapper} from "../helpers/utilHelper";
 
-//Defines the Picture Object
 
-export class Picture{
-  id:any;
-  title: string;
-  description:string;
-  owner:string;
-  location:string;
-  base64Image:string;
-}
-
+/***
+ * This serves the menu.
+ * 1. It gets photos from the database and updates the menu
+ * 2. It then gets images from the remote server and updates both db and the menu
+ * 3. If the user leaves the menu, that menu gets  unsubscribed from the service.
+ */
 @Injectable()
 export class PixMenuService{
-  private _pixItems:BehaviorSubject<Picture[]>;
-  private localStorage:Array<Picture> = [];
+  public localStorage:any=[];
 
   constructor(private dbService:DbService,private postService: PostService){
-    this._pixItems = <BehaviorSubject<Picture[]>>new BehaviorSubject([]);
   }
 
-  get pixItems(){
-    return this._pixItems.asObservable();
-  }
+  /***
+   * This observable keeps on updating the menu on the on going changes from both
+   * the remote server and the database
+   */
+  get myObservable(){
+    let self = this;
+    return new Observable((observer) => {
+      this.getItemsFromDb(observer);
+      this.updateItemsFromServer(observer);
 
-  refreshFromDb() {
-    console.log("REFRESH FROM DB");
-    // this.refreshing = true;
-    let self =this;
-    let items:Array<Picture> = [];
-    self.dbService.getAllRecords(self.dbService.picture, null, results =>{
-      // self.refreshing = false;
-      self.localStorage = results;
-      self._pixItems.next(results);
     });
   }
 
-  ShowPicture(index){
-    return this.localStorage[index];
+  /**
+   * Gets picture_details from the database and sends the resulting data to the subscribing
+   * menu. This has to be followed by a function that calls images
+   * @param observer
+   */
+  getItemsFromDb(observer){
+    let self = this;
+    this.dbService.getStoragedata("PIX_MENU",
+      (data)=>{
+        self.localStorage = data;
+        observer.next({status:200});
+        self.getImagesFromDb(observer);
+      });
   }
 
-  //
-  // processServerResponse(response) {
-  //   // this.refreshing = false;
-  //   let scope:any = this;
-  //   if (response.returnCode != 0) {
-  //     showError(scope, "Failed", response.returnCode + ':' + response.returnMessage, null);
-  //   }
-  //   else if(response.returnCode.length <=0){
-  //     return;
-  //   }
-  //   else {
-  //     //Save response object and go to details page
-  //     // parse each and correct time stamp
-  //     let currentMessageId = 0;
-  //     let dbValues:Array<InboxMessage> =[];
-  //     for (var idx in response.returnObject) {
-  //       let msg = response.returnObject[idx];
-  //       let message:InboxMessage = new InboxMessage();
-  //       message.setMessage(msg.id, msg.sender, msg.message_text, timestampToDate(msg.time_gerenated), 0);
-  //       dbValues.push(message);
-  //       scope.localStorage.unshift(message);
-  //       if (msg.id > currentMessageId) currentMessageId = msg.id;
-  //     }
-  //     scope._inbox_messages.next(scope.localStorage);
-  //     let options:any = {'rtype':'obj'};
-  //     if(dbValues.length >0) this.dbService.getSaveRecords(this.dbService.inbox, dbValues, 'id', null, options);
-  //     if (currentMessageId > 0) {
-  //       //We got atleast one message
-  //       //Save last message id
-  //       utils.setControlNum('LAST_MESSAGE_ID', +currentMessageId)
-  //       // this.refreshFromDb()
-  //     }
-  //
-  //   }
-  // }
-
-  errorServerProcessor = function (error) {
-    // this.refreshing = false;
+  /**
+   * Gets records from the remote server and updates it to in-app database
+   * @param observer
+   */
+  updateItemsFromServer(observer){
+    let self = this;
+    const req = {
+      ...newRequestWrapper(this),
+      "action":"GET_PICTURES",
+    };
+    this.postService.makePostRequest(req, (result)=>{
+      // logDev(JSON.stringify(result));
+      self.dbService.setStoragedata("PIX_MENU",result,
+        (response)=>{
+          self.localStorage = result;
+          observer.next({status:200});
+          this.addMissingImagesFromServer(observer);
+        });
+    });
   }
 
+  /***
+   * It checks localStorage for picture details that don't have an image
+   * Fetches each item in the scope an image as it send it to the subscribers (aka menu)
+   * @param observer
+   */
+  addMissingImagesFromServer(observer){
+    let self = this;
+    const req = {
+      ...newRequestWrapper(this),
+      "action":"FETCH_IMAGES",
+    };
 
+    const len = this.localStorage.length;
+    for(var i=0; i<len; i++){
+      const index = i;
+      const data = this.localStorage[i];
+        req['id'] = +data.id;
+        if(!data.base64Image){
+          this.postService.makePostRequest(req, (image)=>{
+            if(image && image.base64Image){
+
+              observer.next({status:300, data:{index, 'id':data.id, image:image.base64Image}});
+              self.dbService.setStoragedata("IMAGE_"+data.id, image);
+            }
+          });
+        }
+    }
+  }
+
+  /***
+   * User to get images from storage and result is sent to the subscriber (aka menu)
+   * @param observer
+   */
+  getImagesFromDb(observer){
+    const len = this.localStorage.length;
+    for(let i=0; i<len; i++){
+      const data = this.localStorage[i];
+      this.dbService.getStoragedata("IMAGE_"+data.id,
+        (image)=>{
+          observer.next({status:300, data:{index:i, 'id':data.id, image:image.base64Image}});
+        });
+    }
+  }
 
 }
+

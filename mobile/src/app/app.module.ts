@@ -11,7 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {SQLite} from "@ionic-native/sqlite";
 import {Toast} from "@ionic-native/toast";
 import { Camera } from '@ionic-native/camera';
-import {Landing} from "../components/landing/Landing";
+import {Login} from "../components/landing/Login";
 import {DbService} from "../services/DbService";
 import {PostService} from "../services/PostService";
 import {IonicStorageModule} from "@ionic/storage";
@@ -20,14 +20,18 @@ import {Menu} from "../components/menu/Menu";
 import {PixMenuService} from "../services/PixMenuService";
 import {PhotoDetails} from "../components/menu/PhotoDetails";
 import {CapturePhotoContent} from "../components/photos/CapturePhotoContent";
+import {RegisterUser} from "../components/landing/RegisterUser";
+import {Landing} from "../components/landing/Landing";
 
 @NgModule({
   declarations: [
     MyApp,
     Landing,
+    Login,
     PhotoDetails,
     Menu,
     CapturePhotoContent,
+    RegisterUser,
     HomePage,
     ListPage
   ],
@@ -40,9 +44,11 @@ import {CapturePhotoContent} from "../components/photos/CapturePhotoContent";
   entryComponents: [
     MyApp,
     Landing,
+    Login,
     Menu,
     PhotoDetails,
     CapturePhotoContent,
+    RegisterUser,
     HomePage,
     ListPage
   ],

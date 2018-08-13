@@ -10,23 +10,50 @@ import {logDev} from "../../helpers/utilHelper";
   selector: 'main',
   templateUrl: 'menu.html'
 })
-export class Menu implements OnInit{
-  menuItems:any;
+export class Menu{
+  menuItems:any=[];
+  img_placeholder:any;
 
+  /***
+   * This menu subscribes to the pixMenuService on initializing
+   * @param menuService
+   * @param navCtrl
+   */
   constructor(private menuService:PixMenuService,
-              public navCtrl: NavController, public navParams: NavParams){}
+              public navCtrl: NavController){
+    this.menuService.myObservable.subscribe((data)=>{
+      this.img_placeholder =imagePlacehoder;
+      this.menuProcessing(data);
+    });
 
-  ngOnInit() {
-    this.menuItems = [
-      {'title': "First image", 'image':imagePlacehoder},
-      {'title': "Second image", 'image': imagePlacehoder},
-      {'title': "Third image", 'image': imagePlacehoder},
-      {'title': "Fourth image", 'image': imagePlacehoder},
-      {'title': "Fifth image", 'image': imagePlacehoder},
-      {'title': "Sixth image", 'image': imagePlacehoder},
-    ];
   }
 
+
+  /***
+   * This processes changes on the menu as they come pixMenuService
+   * @param data
+   */
+  menuProcessing(data){
+    switch(data.status) {
+      case 200:
+        this.menuItems = this.menuService.localStorage;
+        break;
+      case 300:
+        this.showImage(data);
+        break;
+      default:
+        logDev(data.status);
+    }
+  }
+
+  /***
+   * Updates the view page with images one at time
+   * @param data
+   */
+  showImage(data){
+    const img = data.data;
+    this.menuItems[img.index]['base64Image'] = img.image;
+  }
 
   /**
    * It navigates to the view page of the tapped picture

@@ -6,7 +6,8 @@
 
 <ion-content padding>
   <ion-card>
-    <img src="data:image/jpg;base64,{{item.image}}"/>
+    <img *ngIf="item.hasOwnProperty('image')" src="data:image/jpg;base64,{{item.image}}"/>
+    <img *ngIf="!item.hasOwnProperty('image')" src="data:image/jpg;base64,{{img_placeholder}}"/>
     <ion-card-content>
       <ion-card-title>
         {{ item.title }}
@@ -15,5 +16,18 @@
         {{ item.description }}
       </p>
     </ion-card-content>
+
+    <ion-item>
+      <ion-icon name="ios-thumbs-up" color="success" item-start (click)="vote(1)"></ion-icon>
+      Up Votes
+      <ion-badge item-end>{{ item.up_votes_account }}</ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="ios-thumbs-down" color="danger" item-start (click)="vote(0)"></ion-icon>
+      Down Votes
+      <ion-badge item-end>{{ item.down_votes_account }}</ion-badge>
+    </ion-item>
   </ion-card>
+
 </ion-content>

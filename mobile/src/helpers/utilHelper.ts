@@ -7,3 +7,10 @@ export function logDev(text) {
     console.log(text);
   }
 }
+
+export function newRequestWrapper(scope) {
+  let request = {};
+  const userdata = scope.dbService.userData;
+  if(userdata && userdata.id) request['user_id'] = userdata.id;
+  return request;
+}

@@ -36,7 +36,7 @@ class Images(models.Model):
     Each Image belongs to a picture Detail using ImageId as the picture pk
     """
     base64Image = models.TextField()
-    imageId = models.ForeignKey(Picture, on_delete=models.CASCADE)
+    picture_details = models.ForeignKey(Picture, on_delete=models.CASCADE, blank=True)
 
 
 class VotingHistory(models.Model):
@@ -46,7 +46,7 @@ class VotingHistory(models.Model):
     """
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     picture_id = models.ForeignKey(Picture, on_delete=models.CASCADE)
-    vote_type = models.BooleanField(default=False)
+    vote_type = models.IntegerField()
     up_votes_balance_before = models.IntegerField()
     up_votes_balance_after = models.IntegerField()
     down_votes_balance_before = models.IntegerField()
