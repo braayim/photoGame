@@ -32,8 +32,6 @@ export class PhotoDetails{
    */
   vote(vote_type){
     let self = this;
-    // const vote = vote_type ? 1 :0;
-    const user = +this.dbService.userData.id;
     let request = new newRequestWrapper(this);
     request['action']="VOTE_PICTURE";
     request['picture_id']=+this.item.id;
@@ -45,12 +43,13 @@ export class PhotoDetails{
     //   picture_id:+this.item.id,
     //   vote_type:true
     // };
-    logDev(JSON.stringify(request));
     this.postService.makePostRequest(request,(result)=>{
       logDev(JSON.stringify(result));
-        self.item.up_votes_account = result.up_votes_account;
-        self.item.down_votes_account = result.down_votes_account;
+        if(result.up_votes_account)
+          self.item.up_votes_account = result.up_votes_account;
+        if(result.down_votes_account)
+          self.item.down_votes_account = result.down_votes_account;
     },
-      (error)=>{logDev(JSON.stringify(error))});
+      (error)=>{logDev("Error: "+JSON.stringify(error))});
   }
 }

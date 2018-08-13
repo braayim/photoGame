@@ -86,10 +86,9 @@ class ApiServices:
     """
     @staticmethod
     def vote_picture(data):
-        # return Response(data)
-        picture_id = data.get('picture_id')
-        user_id = data.get('user_id')
-        in_vote_type = data.get('vote_type')
+        picture_id = int(data.get('picture_id'))
+        user_id = int(data.get('user_id'))
+        in_vote_type = int(data.get('vote_type'))
 
         # Getting picture details obj to provide us with the voting ledger standing
         picture_obj = models.Picture.objects.get(id=picture_id)

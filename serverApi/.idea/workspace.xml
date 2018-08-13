@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c38c4c65-8047-46d2-b574-a74320862523" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../mobile/src/components/landing/RegisterUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mobile/src/components/landing/register_user_template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appApi/photos/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/app/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/app/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/landing/Landing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/landing/Login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/landing/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/landing/login_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/menu/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/menu/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/menu/PhotoDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/menu/PhotoDetails.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/menu/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/menu/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/menu/picture_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/menu/picture_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/photos/CapturePhotoContent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/photos/CapturePhotoContent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/components/photos/takephoto_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/components/photos/takephoto_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/configs/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/configs/Config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/helpers/databaseHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/helpers/databaseHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/helpers/utilHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/helpers/utilHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/models/Pictures.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/services/DbService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/services/DbService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/services/PixMenuService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/services/PixMenuService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mobile/src/services/PostService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/services/PostService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appApi/appApi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/appApi/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appApi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appApi/photos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appApi/photos/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appApi/photos/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appApi/photos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,13 +62,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="7" />
-          <entry key="py" value="6545" />
+          <entry key="py" value="6604" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="6545" />
+          <entry key="Python" value="6604" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -111,7 +85,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appApi/appApi/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
@@ -120,19 +94,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appApi/photos/services.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+            <state relative-caret-position="162">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <marker date="1534144640361" expanded="true" signature="146:147" ph="..." />
-                <marker date="1534144640361" expanded="true" signature="146:337" ph="..." />
-                <marker date="1534144640361" expanded="true" signature="357:370" ph="..." />
-                <marker date="1534144640361" expanded="true" signature="840:849" ph="..." />
-                <marker date="1534144640361" expanded="true" signature="1293:1302" ph="..." />
-                <marker date="1534144640361" expanded="true" signature="2360:3082" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="146:147" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="146:337" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="357:370" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="840:849" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="1293:1302" ph="..." />
+                <marker date="1534146276812" expanded="true" signature="2360:3082" ph="..." />
               </folding>
             </state>
           </provider>
@@ -209,11 +183,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appApi/photos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="170">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <marker date="1534144262146" expanded="true" signature="402:403" ph="..." />
+                <marker date="1534145313433" expanded="true" signature="402:403" ph="..." />
               </folding>
             </state>
           </provider>
@@ -245,10 +219,10 @@
         <option value="$PROJECT_DIR$/appApi/photos/apps.py" />
         <option value="$PROJECT_DIR$/appApi/photos/urls.py" />
         <option value="$PROJECT_DIR$/appApi/photos/serializers.py" />
-        <option value="$PROJECT_DIR$/appApi/photos/views.py" />
-        <option value="$PROJECT_DIR$/appApi/photos/services.py" />
         <option value="$PROJECT_DIR$/appApi/photos/models.py" />
         <option value="$PROJECT_DIR$/appApi/appApi/settings.py" />
+        <option value="$PROJECT_DIR$/appApi/photos/views.py" />
+        <option value="$PROJECT_DIR$/appApi/photos/services.py" />
       </list>
     </option>
   </component>
@@ -354,12 +328,12 @@
       <workItem from="1534104035751" duration="1297000" />
       <workItem from="1534117633035" duration="4119000" />
       <workItem from="1534122770878" duration="1718000" />
-      <workItem from="1534140536341" duration="3594000" />
+      <workItem from="1534140536341" duration="5209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78651000" />
+    <option name="totallyTimeSpent" value="80266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="27" width="1316" height="741" extended-state="6" />
@@ -457,17 +431,6 @@
     <entry file="file://$PROJECT_DIR$/appApi/photos/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/appApi/photos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <marker date="1534144262146" expanded="true" signature="402:403" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appApi/photos/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -475,22 +438,6 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <marker date="1534126648471" expanded="true" signature="670:676" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appApi/photos/services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <marker date="1534144640361" expanded="true" signature="146:147" ph="..." />
-            <marker date="1534144640361" expanded="true" signature="146:337" ph="..." />
-            <marker date="1534144640361" expanded="true" signature="357:370" ph="..." />
-            <marker date="1534144640361" expanded="true" signature="840:849" ph="..." />
-            <marker date="1534144640361" expanded="true" signature="1293:1302" ph="..." />
-            <marker date="1534144640361" expanded="true" signature="2360:3082" ph="..." />
           </folding>
         </state>
       </provider>
@@ -510,6 +457,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appApi/photos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <marker date="1534145313433" expanded="true" signature="402:403" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appApi/photos/services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <marker date="1534146276812" expanded="true" signature="146:147" ph="..." />
+            <marker date="1534146276812" expanded="true" signature="146:337" ph="..." />
+            <marker date="1534146276812" expanded="true" signature="357:370" ph="..." />
+            <marker date="1534146276812" expanded="true" signature="840:849" ph="..." />
+            <marker date="1534146276812" expanded="true" signature="1293:1302" ph="..." />
+            <marker date="1534146276812" expanded="true" signature="2360:3082" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

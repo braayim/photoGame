@@ -11,7 +11,7 @@ def game_request(request, format=None):
     # if not request.POST._mutable:
     #     request.POST._mutable = True
     action = request.data.get('action')
-    data = request.data
+    data = request.data.copy()
 
     if not action:
         return Response(status=status.HTTP_404_NOT_FOUND)
