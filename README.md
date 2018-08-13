@@ -27,6 +27,6 @@ Ionic: 4.0.6 <br />
 nmp: v3.10.10 <br />
 Others read "mobile/appApi/package.json" <br />
 
-OS
+OS<br />
 ------------------- <br />
 Ubuntu 18.04 
