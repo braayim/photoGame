@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c38c4c65-8047-46d2-b574-a74320862523" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/appApi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appApi/photos/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appApi/photos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appApi/photos/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="c38c4c65-8047-46d2-b574-a74320862523" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +40,7 @@
     <session id="-1100365693">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.19" value="1" />
@@ -328,12 +324,12 @@
       <workItem from="1534104035751" duration="1297000" />
       <workItem from="1534117633035" duration="4119000" />
       <workItem from="1534122770878" duration="1718000" />
-      <workItem from="1534140536341" duration="5209000" />
+      <workItem from="1534140536341" duration="5417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80266000" />
+    <option name="totallyTimeSpent" value="80474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="27" width="1316" height="741" extended-state="6" />

@@ -192,5 +192,19 @@ export class DbService{
     });
   }
 
+  /***
+   * Removes stored data from storage
+   * @param key : key identifier of the data
+   * @param process : success callback
+   */
+  removeStoragedata(key, process=null) {
+    let self = this;
+    this.storage.remove(key).then((val) => {
+      if(process) process(val)
+    }).catch((e) => {
+      logDev(e)
+    });
+  }
+
 
 }

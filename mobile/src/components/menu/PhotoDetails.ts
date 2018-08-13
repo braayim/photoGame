@@ -37,12 +37,6 @@ export class PhotoDetails{
     request['picture_id']=+this.item.id;
     request['vote_type']=+vote_type;
 
-    // const req ={
-    //   ...newRequestWrapper(this),
-    //   action:"VOTE_PICTURE",
-    //   picture_id:+this.item.id,
-    //   vote_type:true
-    // };
     this.postService.makePostRequest(request,(result)=>{
       logDev(JSON.stringify(result));
         if(result.up_votes_account)

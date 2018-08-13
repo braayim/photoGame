@@ -36,7 +36,7 @@ export class RegisterUser{
     //Call to server
     this.postService.makePostRequest(req, (response)=>{
       this.dbService.setUserdata(response);
-      this.navCtrl.push(Menu, {});
+      this.navCtrl.setRoot(Menu, {});
     });
   }
 

@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Photo Game Standings</ion-title>
   </ion-navbar>
 </ion-header>
@@ -18,7 +21,7 @@
       </ion-thumbnail>
       <h2>{{ item.title }}</h2>
       <p>{{ item.description }}</p>
-      <ion-badge item-end>{{ item.up_votes_account }}</ion-badge>
+      <button ion-button clear item-end>{{ item.up_votes_account }}</button>
     </ion-item>
   </ion-list>
 </ion-content>

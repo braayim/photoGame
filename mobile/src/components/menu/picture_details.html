@@ -17,17 +17,26 @@
       </p>
     </ion-card-content>
 
-    <ion-item>
-      <ion-icon name="ios-thumbs-up" color="success" item-start (click)="vote(1)"></ion-icon>
-      Up Votes
-      <ion-badge item-end>{{ item.up_votes_account }}</ion-badge>
-    </ion-item>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small (click)="vote(1)">
+          <ion-icon name="ios-thumbs-up"></ion-icon>
+          <div>{{ item.up_votes_account }}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button color="danger" ion-button icon-start clear small (click)="vote(0)">
+          <ion-icon name="ios-thumbs-down"></ion-icon>
+          <div>{{ item.down_votes_account }}</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{ item.location }}
+        </ion-note>
+      </ion-col>
+    </ion-row>
 
-    <ion-item>
-      <ion-icon name="ios-thumbs-down" color="danger" item-start (click)="vote(0)"></ion-icon>
-      Down Votes
-      <ion-badge item-end>{{ item.down_votes_account }}</ion-badge>
-    </ion-item>
   </ion-card>
 
 </ion-content>
